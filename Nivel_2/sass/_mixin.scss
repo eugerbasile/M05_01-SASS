@@ -1,0 +1,66 @@
+
+
+@mixin strips {
+  height: $alto;
+  width: 100vw;
+  overflow: $desborde-oculto;
+  text-align: $centro;
+  display: flex;
+  cursor: pointer;
+}
+
+@mixin strip {
+  position: relative;
+  width: 19.9vw;
+  margin: 0.1vw;
+  height: $alto;
+  display: flex;
+  text-align: $centro;
+  overflow: $desborde-oculto;
+  align-items: $centro;
+  justify-content: $centro;
+}
+
+@mixin strip-content {
+  display: flex;
+  align-items: $centro;
+  justify-content: $centro;
+  position: absolute;
+  height: $alto;
+  width: 100%;
+  text-align: $centro;
+}
+
+@mixin before {
+  content: "";
+  display: flex;
+  align-items: $centro;
+  justify-content: $centro;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 20vw;
+  height: $alto;
+  background: white;
+  opacity: 0.05;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-transform: skew(30deg) scaleY(1) translate(0, 0);
+  transform: skew(30deg) scaleY(1) translate(0, 0);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: $desborde-oculto;
+}
+
+@mixin hover {
+  -webkit-transform: skew(0deg) scaleX(2) translate(0, 0);
+  transform: skew(0deg) scaleX(2) translate(0, 0);
+  opacity: 0.2;
+}
+
+@mixin animacion($fondo, $nombre, $duracion) {
+  background-color: $fondo;
+  animation-name: $nombre;
+  animation-duration: $duracion;
+  animation-timing-function: ease-out;
+}
